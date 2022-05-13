@@ -1,0 +1,9 @@
+.git
+.svelte-kit
+build
+node_modules
+Dockerfile
+.gitignore
+.dockerignore
+README.md
+/prisma/dev.db

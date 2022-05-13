@@ -22,11 +22,11 @@ export function randomDate(): string {
 function getUsers() {
 	return [
 		{
-			name: 'Nate',
-			handle: '@NathanMok',
-			email: 'NNok@example.test',
-			avatar: '/profile/matia/avatar.webp',
-			about: 'Likes long walks on the beach. 😘',
+			name: 'brandon',
+			handle: '@CarbonBond',
+			email: 'FakeCarbon@email.com',
+			avatar: '/profile/brandon/avatar.webp',
+			about: 'Likes how fast WebAssebly is',
 			tweets: {
 				create: [
 					{

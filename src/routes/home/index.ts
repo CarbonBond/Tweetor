@@ -1,6 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit'
 
-import prisma from '$root/lib/prisma'
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 import { timePosted } from '$root/utils/date'
 
 export const get: RequestHandler = async () => {

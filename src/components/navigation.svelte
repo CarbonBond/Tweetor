@@ -20,8 +20,8 @@
 					</a>
 				</li>
 
-				<li class:active={path === '/home/profile/matia'}>
-					<a href="/home/profile/matia" sveltekit:prefetch>
+				<li class:active={path === '/home/profile/brandon'}>
+					<a href="/home/profile/brandon" sveltekit:prefetch>
 						<Icon width="32" height="32" name="profile" />
 						<span>Profile</span>
 					</a>
