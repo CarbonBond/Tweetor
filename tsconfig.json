@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		// ...
+		"baseUrl": ".",
+		"paths": {
+			"$root/*": ["./src/*"]
+		}
+	},
+	"extends": "./.svelte-kit/tsconfig.json"
+}
