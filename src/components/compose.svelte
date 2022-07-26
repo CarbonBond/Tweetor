@@ -8,7 +8,7 @@
 </script>
 
 <div class="compose">
-	<img src="/profile/Brandon/avatar.webp" alt="Avatar" />
+	<img src="/profile/brandon/avatar.webp" alt="Avatar" />
 	<form action="/home" method="post" autocomplete="off" 
   use:enhance={{ result: ({ form }) => form.reset() }}>
 		<input
