@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 import { timePosted } from '$root/utils/date'
 
 export const get: RequestHandler = async () => {
-	// get the tweets and the user data (Prisma 😍)
+	// get the tweets and the user data 
 	const data = await prisma.tweet.findMany({
 		include: { user: true },
 		orderBy: { posted: 'desc' }
@@ -54,7 +54,7 @@ export const post: RequestHandler = async ({ request }) => {
 	const form = await request.formData()
 	const tweet = String(form.get('tweet'))
 
-	// you should probably use a validation library
+	// I should probably use a validation library
 	if (tweet.length > 140) {
 		return {
 			status: 400,

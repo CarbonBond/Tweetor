@@ -36,10 +36,10 @@
 </div>
 
 <nav>
-	<a href="./{profile.name}" class="active">Tweets</a>
+	<a href="./" >Tweets</a>
 	<a href="">Tweets & replies</a>
 	<a href="">Media</a>
-	<a href="{profile.name}/likes">Likes</a>
+	<a href="./likes" class="active">Likes</a>
 </nav>
 
 {#each tweets as tweet (tweet.id)}

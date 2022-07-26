@@ -23,8 +23,8 @@ function getUsers() {
 	return [
 		{
 			name: 'brandon',
-			handle: '@CarbonBond',
-			email: 'FakeCarbon@email.com',
+			handle: '@BrandonBurge',
+			email: 'Brandon.w.Burge@gmail.com',
 			avatar: '/profile/brandon/avatar.webp',
 			about: 'Likes how fast WebAssebly is',
 			tweets: {

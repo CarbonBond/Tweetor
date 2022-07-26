@@ -8,20 +8,20 @@ export const get: RequestHandler = async ({ params }) => {
 		where: { name: params.user }
 	})
 
-	const tweets = await prisma.tweet.findMany({
-		where: { user: { id: profile.id } },
-		include: { user: true },
-		orderBy: { posted: 'desc' }
-	})
-
 	const liked = await prisma.liked.findMany({
 		where: { userId: profile.id },
 		select: { tweetId: true }
 	})
 
-	const likedTweets = Object.keys(liked).map(
-		(key) => liked[key].tweetId
-	)
+  const tweets = [];
+
+  for(let i = 0; i < liked.length; i++) {
+    const tweet = await prisma.tweet.findUnique({
+      where: {id: liked[i].tweetId},
+      include: {user: true}
+    })
+    tweets.push(tweet)
+  }
 
 	if (!profile || !tweets || tweets.length === 0) {
 		return { status: 404 }
@@ -37,7 +37,7 @@ export const get: RequestHandler = async ({ params }) => {
 			avatar: tweet.user.avatar,
 			handle: tweet.user.handle,
 			name: tweet.user.name,
-			liked: likedTweets.includes(tweet.id)
+			liked: true 
 		}
 	})
 
