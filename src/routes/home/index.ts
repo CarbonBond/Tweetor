@@ -63,6 +63,9 @@ export const post: RequestHandler = async ({ request }) => {
 		}
 	}
 
+  const user = await prisma.user.findFirst({
+    where: { name: "brandon"}
+  })
 	// the user id is hardcoded but you can get it from a session
 	await prisma.tweet.create({
 		data: {
@@ -70,7 +73,7 @@ export const post: RequestHandler = async ({ request }) => {
 			url: Math.random().toString(16).slice(2),
 			content: tweet,
 			likes: 0,
-			user: { connect: { id: 1 } }
+			user: { connect: { id: user.id } }
 		}
 	})
 
