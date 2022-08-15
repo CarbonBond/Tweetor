@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { page } from '$app/stores'
-	import Icon from '$root/components/icon.svelte'
+	import { page } from '$app/stores';
+	import Icon from '$root/components/icon.svelte';
 
-	$: path = $page.url.pathname
+	$: path = $page.url.pathname;
 </script>
 
 <aside>
@@ -54,7 +54,9 @@
 	}
 
 	ul {
-		display: grid;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
 		gap: var(--spacing-8);
 		font-size: var(--font-18);
 	}
@@ -94,6 +96,15 @@
 	}
 
 	@media (min-width: 1024px) {
+		.container {
+			max-width: none;
+		}
+
+    ul{
+			flex-direction: column;
+      align-items: center;
+    }
+
 		aside {
 			padding: 0 var(--spacing-32);
 		}

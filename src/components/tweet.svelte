@@ -112,8 +112,7 @@
 	}
 
 	.tweet-container {
-		display: grid;
-		grid-template-columns: min-content 1fr;
+		display: flex;
 		gap: var(--spacing-16);
 		padding: var(--spacing-16) var(--spacing-24);
 		transition: all 0.3s;
@@ -124,7 +123,9 @@
 	}
 
 	.tweet-details {
-		display: grid;
+    flex: 1 1 auto;
+		display: flex;
+    flex-direction: column;
 		gap: var(--spacing-8);
 	}
 
@@ -145,6 +146,7 @@
 
 	.content {
 		font-size: var(--font-16);
+    word-wrap: break-word;
 	}
 
 	.actions {
@@ -152,6 +154,9 @@
 		gap: var(--spacing-32);
 		margin-top: var(--spacing-16);
 	}
+  .action>* {
+    flex: 1 1 auto;
+  }
 
 	.actions button,
 	.actions a {
@@ -203,12 +208,6 @@
 
 	.remove:hover .circle {
 		background-color: hsla(0 100% 50% / 4%);
-	}
-
-	.like,
-	.remove,
-	.permalink {
-		width: 80px;
 	}
 
 	.count {
